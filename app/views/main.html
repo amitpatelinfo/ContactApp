@@ -1,0 +1,43 @@
+<div class="contact-table">
+    <div class="input-group" style="width:100%">
+        <input type="text" placeholder="Search contacts"
+               class="form-control" ng-model="searchName"   style="width:200px">
+        <div class="input-group"  style="float:right;">
+            <a class="btn btn-default" href="#/contact">
+                <span>Add Contact </span>&nbsp;&nbsp;<span
+                    class="glyphicon glyphicon-plus"
+                    aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+
+
+    <br>
+    <div class="panel panel-primary">
+        <!-- Table -->
+        <table class="table table-striped" width="100%">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Date of birth</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="contact in filteredContacts = ( Contacts | filter : { name : searchName} )">
+                  <td>{{contact.name}}</td>
+                  <td>{{contact.address}}</td>
+                  <td>{{contact.city}}</td>
+                  <td>{{contact.phone}}</td>
+                  <td>{{contact.email}}</td>
+                  <td>{{contact.dob | date}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3>Showing {{filteredContacts.length}} of {{Contacts.length}} total
+        contacts</h3>
+</div>
