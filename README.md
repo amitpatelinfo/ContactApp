@@ -1,4 +1,4 @@
 ContactApp
 ==========
 
-AngularJS POC
+AngularJS Contact APP POC
